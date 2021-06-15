@@ -1,3 +1,5 @@
+setwd("./")
+
 library(tidyverse)
 library(stringr)
 
@@ -19,10 +21,15 @@ data$"gradient" <- 12
 # rearranging columns
 data <- data[c("name", "center_x", "center_y", "center_z", "rin(z-in)", 
                "rin(z-out)", "dout", "length", "angle", "B", "gradient")]
+data$center_z <- as.numeric(data$center_z)
 
 # filtering unneeded components, mutating some columns 
 data <- data %>% 
   filter(!is.na(center_x), !str_detect(name, "M\\w+"), 
          !str_detect(name, "Z\\w+"), !str_detect(name, "S\\w+")) %>%
-  mutate(angle = angle*pi/180)
+  mutate(angle = angle*pi/180, center_x = center_x + sin(angle)*(length/2), center_z = center_z + cos(angle)*(length/2))
+
+
+
+
   
