@@ -11,22 +11,22 @@
 #/run/numberOfThreads 4
 
 #KEK world volume
-#/EPol/construct/worldVol_x 500000
+#/EPol/construct/worldVol_x 1000000
 #/EPol/construct/worldVol_y 20 meter
-#/EPol/construct/worldVol_z 100000
+#/EPol/construct/worldVol_z 1000000
 
 #detectors and components
 /EPol/construct/B2eR 1
 /EPol/construct/QF1 1
 /EPol/input/name e18GeV_g532nm_Pz71_1e2ev.cr
 
-#/EPol/construct/magFile kek_magnet.dat
-#/EPol/input/name e7GeV_g532nm_Pz71_1e2ev_KEK.cr
+#/EPol/construct/magFile kek_magnet_2.dat
+#/EPol/input/name e7GeV_g532nm_Pz100_1e2ev_mil.cr
 
-/EPol/input/vertexPosX -45104 cm
-/EPol/input/vertexPosY 0 cm
-/EPol/input/vertexPosZ 4531.49785 cm
-/EPol/input/vertexRotY 3.142575 rad
+#/EPol/input/vertexPosX -45105.20726 cm
+#/EPol/input/vertexPosY 0 cm
+#/EPol/input/vertexPosZ 4802.7761 cm
+#/EPol/input/vertexRotY 3.131592654 rad
 
 #Run single electron
 #/EPol/input/useBeam 1

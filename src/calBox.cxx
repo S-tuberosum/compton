@@ -8,11 +8,13 @@
 //_____________________________________________________________________________
 
 //C++
+#include "Randomize.hh"
 
 //ROOT
 #include "TTree.h"
 
 //Geant
+#include "G4GenericMessenger.hh"
 #include "G4NistManager.hh"
 #include "G4Box.hh"
 #include "G4LogicalVolume.hh"
@@ -33,6 +35,10 @@ calBox::calBox(const G4String& nam, G4double x, G4double y, G4double z, G4double
   G4VSensitiveDetector(nam), fNam(nam) {
 
   G4cout << "  calBox: " << fNam << G4endl;
+
+  fMsg = new G4GenericMessenger(this, "/EPol/construct/");
+  fMsg->DeclareProperty("resMean", resMean);
+  fMsg->DeclareProperty("resSD", resSD);
 
   //detector shape
   //G4double xysize = 2000*mm;
@@ -112,7 +118,7 @@ G4bool calBox::ProcessHits(G4Step *step, G4TouchableHistory*) {
   }
 
   //energy
-  fEnPrim = track->GetTotalEnergy();
+  fEnPrim = G4RandGauss::shoot(resMean, resSD)*track->GetTotalEnergy();
 
   //hit position
   const G4ThreeVector hp = step->GetPostStepPoint()->GetPosition();

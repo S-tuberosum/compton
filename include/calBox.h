@@ -7,6 +7,7 @@
 #include "Detector.h"
 #include "G4VSensitiveDetector.hh"
 
+class G4GenericMessenger;
 class G4VPhysicalVolume;
 class G4Step;
 
@@ -27,6 +28,7 @@ class calBox : public Detector, public G4VSensitiveDetector {
 
   private:
 
+    G4GenericMessenger *fMsg; // messenger for detectors and components
     G4String fNam; // detector name
 
     Bool_t fSelectPrim; // flag to select only primary track in ProcessHits
@@ -38,6 +40,8 @@ class calBox : public Detector, public G4VSensitiveDetector {
     Double_t fHx; // hit position in x
     Double_t fHy; // hit position in y
     Double_t fHz; // hit position in z
+    G4double resMean = 1; G4double resSD = 0; // energy resolution mean and standard deviation (default is perfect resolution)
+
 
 /*
     G4VPhysicalVolume *fSens; //detector sensitive volume

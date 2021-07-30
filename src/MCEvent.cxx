@@ -108,6 +108,7 @@ void MCEvent::CreateOutput(TTree *tree) {
   u.AddBranch("pXsec", &fpXsec, "D");
   u.AddBranch("uXsec", &fuXsec, "D");
 
+  u.AddBranch("phot_en", &fPhotGen, "D");
   u.AddBranch("phot_theta", &fPhotTheta, "D");
   u.AddBranch("phot_phi", &fPhotPhi, "D");
 

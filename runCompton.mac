@@ -8,6 +8,10 @@
 
 # Initialize kernel
 /run/initialize
+
+/EPol/construct/resMean 1
+/EPol/construct/resSD 0.02
+
 /compton/output/name o_deleteMe.root
 /run/beamOn 100
 

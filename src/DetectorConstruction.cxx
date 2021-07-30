@@ -124,6 +124,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct() {
     G4cout << cc1 << endl;
     if(cc1=="CAL"){    
         ss>>cc2;
+        G4cout << cc2 << endl;
         ss>>xpos;
         ss>>ypos;
         ss>>zpos;

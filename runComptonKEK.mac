@@ -1,15 +1,17 @@
 /EPol/construct/worldVol_x 500000
 /EPol/construct/worldVol_y 20 meter
-/EPol/construct/worldVol_z 100000
+/EPol/construct/worldVol_z 300000
 
 
-/EPol/construct/magFile kek_magnet.dat
-/EPol/input/name e7GeV_g532nm_Pz71_1e2ev_KEK.cr
+/EPol/construct/magFile kek_magnet_2.dat
 
-/EPol/input/vertexPosX -45104 cm
+/EPol/input/name e7GeV_g532nm_Pz100_1e2ev_mil.cr
+#/EPol/input/name e7GeV_g532nm_Py100_1e2ev_mil.cr
+
+/EPol/input/vertexPosX -45105.20726 cm
 /EPol/input/vertexPosY 0 cm
-/EPol/input/vertexPosZ  4531.49785 cm
-/EPol/input/vertexRotY 3.142575 rad #0.00098307 rad
+/EPol/input/vertexPosZ 4802.7761 cm
+/EPol/input/vertexRotY 3.131592654 rad
 
 # Run single electron
 #/EPol/input/useBeam 1
@@ -17,6 +19,10 @@
 
 # Initialize kernel
 /run/initialize
+
+/EPol/construct/resMean 1
+/EPol/construct/resSD 0.02
+
 /compton/output/name o_deleteMe.root
-/run/beamOn 100000
+/run/beamOn 1000000
 
