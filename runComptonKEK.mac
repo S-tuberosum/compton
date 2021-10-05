@@ -2,7 +2,6 @@
 /EPol/construct/worldVol_y 20 meter
 /EPol/construct/worldVol_z 300000
 
-
 /EPol/construct/magFile kek_magnet_2.dat
 
 /EPol/input/name e7GeV_g532nm_Pz100_1e2ev_mil.cr
@@ -21,7 +20,7 @@
 /run/initialize
 
 /EPol/construct/resMean 1
-/EPol/construct/resSD 0.02
+/EPol/construct/resSD 0
 
 /compton/output/name o_deleteMe.root
 /run/beamOn 1000000
