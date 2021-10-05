@@ -8,7 +8,6 @@
 #include "TTree.h"
 #include "TF1.h"
 #include "TLeaf.h"
-#include "MyClass.h"
 
 // double x_min = -451720;
 // double x_max = -45150;
