@@ -33,6 +33,7 @@
 #include "photonDet.h"
 #include "calBox.h"
 #include "genericDet.h"
+#include "beamPipe.h"
 
 using namespace std;
 
@@ -150,6 +151,19 @@ G4VPhysicalVolume* DetectorConstruction::Construct() {
         ss>>zpos;
         ss>>rot;
         AddDetector(new electronDet(cc2,xpos*meter,ypos*meter,zpos*meter,rot,top_l)); //add Electron Detector
+    }
+    if(cc1=="BP"){
+        ss>>cc2;
+        ss>>xpos;
+        ss>>ypos;
+        ss>>zpos;
+        ss>>r1;
+        ss>>r2;
+        ss>>dout;
+        ss>>length;
+        ss>>angle;
+        ss>>gradient;
+        AddDetector(new beamPipe(cc2,xpos*meter,ypos*meter,zpos*meter,length*meter,r1*meter,r2*meter,dout*meter,angle, top_l)); //add beam pipe
     }
     if(cc1=="DB"){
         ss>>cc2;
