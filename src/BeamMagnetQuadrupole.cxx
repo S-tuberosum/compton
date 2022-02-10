@@ -33,7 +33,7 @@ BeamMagnetQuadrupole::BeamMagnetQuadrupole(G4String nam, G4double xpos,G4double 
 		yRot->rotateY(angle*rad);
 
 		G4String nam_inner = fNam+"_inner";
-		G4Cons *shape_inner = new G4Cons(nam_inner, 0, r2, 0, r1, length/2, 0, 360*deg);
+		G4Cons *shape_inner = new G4Cons(nam_inner, 0, r2, 0, r1, length, 0, 360*deg);
 
 		G4Material *mat_inner = G4NistManager::Instance()->FindOrBuildMaterial("G4_Galactic");
 		G4LogicalVolume *vol_inner = new G4LogicalVolume(shape_inner, mat_inner, nam_inner);

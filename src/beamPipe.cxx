@@ -42,7 +42,7 @@ beamPipe::beamPipe(G4String nam, G4double xpos,G4double ypos,G4double zpos,G4dou
 		new G4PVPlacement(yRot, G4ThreeVector(xpos,ypos, zpos), vol_inner, nam_inner, top, false, 0);
 
 		//cylindrical outer shape
-		G4Tubs *shape_outer = new G4Tubs(fNam+"_outer", 0., dout*0.5, length/2-1e-4*meter, 0., 360.*deg);
+		G4Tubs *shape_outer = new G4Tubs(fNam+"_outer", 0., dout, length/2-1e-4*meter, 0., 360.*deg);
 
 		//magnet vessel around the inner magnetic core
 		G4SubtractionSolid *shape_vessel = new G4SubtractionSolid(fNam, shape_outer, shape_inner);
@@ -66,8 +66,8 @@ beamPipe::beamPipe(G4String nam, G4double xpos,G4double ypos,G4double zpos,G4dou
 G4bool beamPipe::ProcessHits(G4Step *step, G4TouchableHistory*) {
 
 	//remove the track entering the magnet vessel
-	G4Track *track = step->GetTrack();
-	track->SetTrackStatus(fKillTrackAndSecondaries);
+	//G4Track *track = step->GetTrack();
+	//track->SetTrackStatus(fKillTrackAndSecondaries);
 
 	return true;
 
